@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method='POST'>
+        {% csrf_token %}
+        <style>
+            div, input, table, form, header {
+                font-family: 'open sans', serif;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+}
+
+        </style>
+        <table> 
+            {{ login_form.as_table }}
+            
+        </table>
+        
+        <input type='submit' value='Entrar'> 
+        <input type='button' name='Cadastro' value='Realizar cadastro'/>
+        
+        <div>Não possui cadastro?</div>
+        
+
+    </form>
+    <header>
+    <nav>
+        <ul>
+        </ul>
+    </nav>
+    </header>
+{% endblock %}

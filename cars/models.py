@@ -10,12 +10,12 @@ class Brand(models.Model):
 class Car(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.PROTECT, related_name='car_brand')
     factory_year = models.IntegerField()
-    id = models.AutoField(primary_key=True)
-    image = models.ImageField(upload_to='cars/', blank=True, null=True)
-    model = models.CharField(max_length=100)
     model_year = models.IntegerField()
+    id = models.AutoField(primary_key=True)
+    model = models.CharField(max_length=100)
     plate = models.CharField(max_length=7, blank=True, null=True)
     value = models.FloatField()
+    image = models.ImageField(upload_to='cars/')
    
 
     def __str__(self):
