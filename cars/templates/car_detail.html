@@ -86,6 +86,11 @@
     h1{
       text-align: center;
     }
+
+    div {
+      text-align: center;
+    }
+
   </style>
 
   <div class="car-card">
@@ -101,8 +106,8 @@
         <a href="{% url "car_update" pk=object.pk  %}"><input type="button" value="Editar carro" class="btn btn-primary"></a>
         </div>
       {% else %}
-      
         <h1>Faça login para visualizar as opções</h1>
+        <h2><a href="{% url "cars_list" %}"> Tela inicial </h2>
       {% endif %}
 
 {% endblock %}
