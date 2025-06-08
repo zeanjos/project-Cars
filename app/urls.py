@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from cars.views import CreateNewCarView, CarsListView, CarDetailView, CarUpdateView, CarDeleteView
@@ -16,7 +16,8 @@ urlpatterns = [
     path('car/<int:pk>/', CarDetailView.as_view(), name='car_detail'),
     path('car/<int:pk>/update/', CarUpdateView.as_view(), name='car_update'),
     path('car/<int:pk>/delete/', CarDeleteView.as_view(), name='car_delete'),
-    
+
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     #O MEDIA_URL indica o endereço inicial ou base para esses arquivos que serão enviados.
     #O MEDIA_ROOT indica onde estão armazenados no servidor, então se você estiver hospedando na aws por exemplo, você deverá especificar primeiro
