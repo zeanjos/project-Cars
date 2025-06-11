@@ -17,7 +17,6 @@
 
 
     form:hover {
-      cursor: pointer;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
       transform: tra
     }
@@ -129,10 +128,9 @@
     {% if user.is_authenticated %}
       <div class="buttons-container">
         <a href="{% url "car_delete" pk=object.pk %}"><input type="submit" value="Salvar Alterações" class="btn btn-primary"></a>
-        <a href="{% url "car_delete" pk=object.pk %}"><input type="input" value="Excluir Carro" class="btn btn-danger">
-        </div>
+        <a href="{% url "car_delete" pk=object.pk %}"><input type="input" value="Excluir Carro" class="btn btn-danger"></a>
       </div>
-
+      
       {% else %}
         <h1>Faça login para visualizar as opções</h1>
       {% endif %}

@@ -15,7 +15,6 @@
     }
 
     .car-card:hover {
-      cursor: pointer;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
       transform: translateY(-2px);
     }
@@ -99,10 +98,7 @@
       <p><strong>Ano do modelo:</strong> {{ object.model_year }}</p>
       <p><strong>Placa:</strong> {{ object.plate }}</p>
       <p><strong>Preço:</strong> R$ {{ object.value }}</p>
-      {% if object.bio%}
-      <br>
       <p><strong>Bio: </strong>{{ object.bio }}</p>
-      {% endif %}
   </div>
       {% if user.is_authenticated %}
         <div class="buttons-container">

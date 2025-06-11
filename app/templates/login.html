@@ -1,33 +1,30 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <form method='POST'>
+    <style>
+        .center-container, div{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+
+
+    <div class="center-container">
+        <form method='POST'>
         {% csrf_token %}
-        <style>
-            div, input, table, form, header {
-                font-family: 'open sans', serif;
-                margin: 0;
-                padding: 0;
-                text-align: center;
-}
+            <table>
+                {{ login_form.as_table }}
 
-        </style>
-        <table> 
-            {{ login_form.as_table }}
-            
-        </table>
-        
-        <input type='submit' value='Entrar'> 
-        <input type='button' name='Cadastro' value='Realizar cadastro'/>
-        
-        <div>Não possui cadastro?</div>
-        
+            </table>
+            <input type='submit' value='Entrar'> 
+        </form>
+        </div>
 
-    </form>
-    <header>
-    <nav>
-        <ul>
-        </ul>
-    </nav>
-    </header>
+        <div style="margin-top: 20px;">
+            <input type='button' name='Cadastro' value='Realizar cadastro'/>   
+            <div>Não possui cadastro?</div>
+        </div>
+</div>
+ 
 {% endblock %}

@@ -7,11 +7,11 @@ from accounts.views import register_view, login_view, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls), #encaminha para a url admin
+    path('', CarsListView.as_view(), name='home'),
     path('register/', register_view, name='register'),
     path('cars/', CarsListView.as_view(), name='cars_list'),
     path('new_car/', CreateNewCarView.as_view(), name='new_car'),
     path('logout/', logout_view, name='logout'),
-    path('', CarsListView.as_view(), name='home'),
     path('login/', login_view, name='login'),
     path('car/<int:pk>/', CarDetailView.as_view(), name='car_detail'),
     path('car/<int:pk>/update/', CarUpdateView.as_view(), name='car_update'),
