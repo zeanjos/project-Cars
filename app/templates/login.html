@@ -1,30 +1,69 @@
 {% extends 'base.html' %}
 {% block content %}
     <style>
-        .center-container, div{
+        .btn-real {
+            padding: 8px 14px;
+            background-color:rgb(92, 0, 203);
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            border: 1px solid rgb(92, 0, 203);
+            cursor: pointer;
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 10px;
+            width: fit-content;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
+        }
+        .btn-real:hover {
+            background-color:rgb(60, 0, 150);
+        }
+        .button-wrapper{
+            display: flex;
+            text-align: center;
+            gap: 10px;
+        }
+        .form-wrapper table{
+            margin: 0 auto;
+        }
+        .link-wrapper {
+            text-decoration: none;
+        }
+        .page-container{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+        .submit-button-wrapper {
             display: flex;
             justify-content: center;
-            flex-direction: column;
-            align-items: center;
         }
+        
+        
     </style>
+<div class="page-container">
 
-
-    <div class="center-container">
+    <div class="form-wrapper">
         <form method='POST'>
-        {% csrf_token %}
+            {% csrf_token %}
             <table>
                 {{ login_form.as_table }}
-
             </table>
-            <input type='submit' value='Entrar'> 
-        </form>
-        </div>
 
-        <div style="margin-top: 20px;">
-            <input type='button' name='Cadastro' value='Realizar cadastro'/>   
-            <div>Não possui cadastro?</div>
+            <div class="submit-button-wrapper">
+                <button type="submit" class="btn-real">Entrar</button>
+            </div>
+        </form>
+    </div>
+        
+        <div class="button-wrapper">
+            <a href="{% url 'register' %}" class="link-wrapper">
+                <button type="button" class="btn-real">Realizar Cadastro</button>
+        </a>
         </div>
-</div>
+    </div>
+
  
 {% endblock %}

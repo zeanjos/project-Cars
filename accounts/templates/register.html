@@ -1,6 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
+    <style>
+        .submit-button-wrapper{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px
+        }
+        .btn-real{
+        box-shadow: 0 4px 12px, rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+        background-color:rgb(92, 0, 203);
+        border: 1px solid rgb(92, 0, 203);
+        cursor: auto;
+        color: white;
+        font-family: sans-serif;
+        font-size: 16px;
+        padding: 12px 24px
+        transition: background-color 0.3 ease
+        }
+        .btn-real:hover{
+            background-color:rgb(60, 0, 150);
+        }
+        .form-group{
+            text-align: center;
+            
+        }
 
+    </style>
     <form method='post'>
         {% csrf_token %}
 
@@ -21,10 +47,12 @@
             <label>Confirmação de senha</label>
             {{ user_form.password2 }}
         </div>
-
-        <div class='form-group'>
-            <input type ='submit' value='Cadastrar', class= 'btn btn-success'>
+        
+  
+        <div class='submit-button-wrapper'>
+            <button type ='submit' class= 'btn-real'>Realizar Cadastro</button>
         </div>
+  
 
         
     </form>
